@@ -9,7 +9,7 @@
 @section('content')
 
 @if ($notes->isEmpty())
-    {{-- Leave this section empty intentionally --}}
+    {{-- Leave this section empty intentionally Just to dela with javascript --}}
 @endif
                   
 @if (!$notes->isEmpty())
