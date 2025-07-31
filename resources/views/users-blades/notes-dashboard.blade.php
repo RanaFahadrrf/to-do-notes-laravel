@@ -9,7 +9,8 @@
 @section('content')
 
      <a href="{{ route('add-note') }}" class="btn btn-success mb-3 mt-3">Add New Note</a>
-    
+     <a href="{{ route('show-deleted-notes') }}" class="btn btn-danger mb-3 mt-3">Show Deleted Notes</a>
+      
 
 
 
@@ -20,7 +21,7 @@
                         <th>Description</th>
                         <th>View</th>
                         <th>Update</th>
-                        <th>Delete</th>                      
+                        <th>Delete</th>                  
                     </tr>
                    @foreach ($notes as $note)
                     <tr>
@@ -199,6 +200,8 @@
 </td>
 
 
+
+
 </tr>
 @endforeach
 
@@ -233,6 +236,3 @@
     }
 </script>
 @endsection
-
- 
-

@@ -37,5 +37,7 @@ class AppServiceProvider extends ServiceProvider
         {
                 return $user->id === $profileId;
         });
+
+
     }
 }

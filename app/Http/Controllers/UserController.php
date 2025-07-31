@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Jobs\SendWelcomeEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -47,6 +48,7 @@ class UserController extends Controller
             //     'status' => true,
             //     'message' => "Data Saved in DB Successfully",
             //   ] , 200);
+            SendWelcomeEmail::dispatch($user);  //send welcome email to a new user.
             return redirect()->route('login-page');
         }
         else{
@@ -109,6 +111,15 @@ class UserController extends Controller
       public function showProfile()
     {
          //It is important to note that there is no need to create this function because all of the user's logged-in data can be accessed using Auth::user(); class.
+    }
+
+
+    public function test()
+    {
+        // console.log(today());
+          echo "Today is: " . today()->format('F j, Y'). " " . now()->format('H , i , s');
+          $users = User::all();
+          return $users;
     }
          
  }
