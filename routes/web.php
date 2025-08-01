@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminAuthController;
 
 Route::get('/user-signup', function () {
     return view('users-blades.signup');
@@ -35,3 +36,17 @@ Route::get('/notes-recover',[NoteController::class , 'restore']);
 Route::get('/show-deleted-notes',[NoteController::class , 'showDeletedNotes'])->name('show-deleted-notes');
 Route::post('/restore-single-note/{id}',[NoteController::class , 'restoreSingleNote'])->name('restore-single-note');
 Route::delete('/force-delete/{id}',[NoteController::class , 'forceDelete'])->name('force-delete');
+
+
+
+
+
+
+//Below are the routes of admin
+// admin-signup
+Route::get('/admin/show-signup', [AdminAuthController::class, 'showSignup'])->name('admin-signup');
+Route::post('/admin/signup', [AdminAuthController::class, 'processSignup'])->name('admin-process-signup');
+Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin-login');
+Route::post('/admin/login', [AdminAuthController::class, 'processLogin'])->name('admin-process-login');
+Route::get('/admin/verify-otp', [AdminAuthController::class, 'showOtpForm'])->name('admin.otp');
+Route::post('/admin/verify-otp', [AdminAuthController::class, 'verifyOtp']);
