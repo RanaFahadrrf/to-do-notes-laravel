@@ -27,5 +27,11 @@
             </a>
         </div>
 
+        <div class="d-flex justify-content-center mt-4">
+    <a href="{{ route('select-type-of-user') }}" class="btn btn-secondary px-5 py-2 fw-semibold shadow-sm">
+        <i class="bi bi-arrow-left-circle me-1"></i> Back to Role Selection
+    </a>
+</div>
+
               </form>
 @endsection

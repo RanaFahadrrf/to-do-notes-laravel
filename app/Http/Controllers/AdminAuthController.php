@@ -112,7 +112,7 @@ public function verifyOtp(Request $request) {
         $admin->otp_expires_at = null;
         $admin->save();
 
-        return redirect('/admin/dashboard');
+        return redirect()->route('admin-dashboard');
     }
 
     return back()->withErrors(['otp_code' => 'Invalid or expired OTP']);

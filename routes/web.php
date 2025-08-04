@@ -7,7 +7,7 @@ use App\Http\Controllers\AdminAuthController;
 Route::get('/user-signup', function () {
     return view('users-blades.signup');
 })->name('user-signup');
-Route::get('/', function () {
+Route::get('/login-page', function () {
     return view('users-blades.login');
 })->name('login-page');
 // Route::get('/notes-dashboard', function () {
@@ -18,6 +18,17 @@ Route::get('/add-note', function () {
 })->name('add-note');
 
 
+//Below is the route to screen/page select-type-of-user.blade.php
+Route::get('/', function () {
+    return view('select-type-of-user');
+})->name('select-type-of-user');
+
+
+
+//Below route is to open admin-dashboard
+Route::get('/admin/dashboard', function () {
+    return view('admin-blades.admin-dashboard');
+})->name('admin-dashboard');
 
 
 
@@ -50,3 +61,4 @@ Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('adm
 Route::post('/admin/login', [AdminAuthController::class, 'processLogin'])->name('admin-process-login');
 Route::get('/admin/verify-otp', [AdminAuthController::class, 'showOtpForm'])->name('admin.otp');
 Route::post('/admin/verify-otp', [AdminAuthController::class, 'verifyOtp']);
+
