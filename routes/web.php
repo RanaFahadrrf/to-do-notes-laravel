@@ -26,9 +26,9 @@ Route::get('/', function () {
 
 
 //Below route is to open admin-dashboard
-Route::get('/admin/dashboard', function () {
-    return view('admin-blades.admin-dashboard');
-})->name('admin-dashboard');
+// Route::get('/admin/dashboard', function () {
+//     return view('admin-blades.admin-dashboard');
+// })->name('admin-dashboard');  //made a new route below for this
 
 
 
@@ -61,4 +61,9 @@ Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('adm
 Route::post('/admin/login', [AdminAuthController::class, 'processLogin'])->name('admin-process-login');
 Route::get('/admin/verify-otp', [AdminAuthController::class, 'showOtpForm'])->name('admin.otp');
 Route::post('/admin/verify-otp', [AdminAuthController::class, 'verifyOtp']);
+Route::get('/admin/show-dashboard', [AdminAuthController::class, 'showDashboard'])->name('admin-dashboard');
+Route::get('/admin/logout',[AdminAuthController::class , 'adminLogout'])->name('admin-logout');
+Route::post('/aa/{id}', [AdminAuthController::class, 'approveUserNoteRequest'])->name('admin-approval');
 
+
+Route::get('/admin/settings',[AdminAuthController::class , 'adminSettings'])->name('admin-settings');

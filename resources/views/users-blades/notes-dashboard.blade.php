@@ -39,7 +39,7 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewNoteModal{{ $note->id }}">
             View
         </button>
-        <!-- Edit Modal -->
+        <!-- View Modal -->
         <div class="modal fade" id="viewNoteModal{{ $note->id }}" tabindex="-1" aria-labelledby="viewNoteModalLabel{{ $note->id }}" aria-hidden="true">
           <div class="modal-dialog">
                 @method('PUT')
