@@ -2,8 +2,7 @@ name: Laravel CI
 
 on:
   push:
- 
-       branches: ["*"]    # Runs on any branch
+    branches: ["*"]    # Runs on any branch
   pull_request:
 
 jobs:
