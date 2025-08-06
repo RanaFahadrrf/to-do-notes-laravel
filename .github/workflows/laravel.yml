@@ -2,8 +2,8 @@ name: Laravel CI
 
 on:
   push:
-    branches: ["*"]    # Runs on any branch
-  pull_request:
+    branches: ["*"]  # Trigger on push to any branch
+  pull_request: {}    # <- ✅ THIS LINE FIXES THE ISSUE
 
 jobs:
   laravel-tests:
